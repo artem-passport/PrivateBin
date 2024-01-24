@@ -4964,7 +4964,7 @@ jQuery.PrivateBin = (function($, RawDeflate) {
                   password = TopNav.getPassword();
 
             // do not send if there is no data
-            if (plainText.length === 0 && !files && !password) {
+            if (!password || (plainText.length === 0 && !files)) {
                 // revert loading status…
                 Alert.hideLoading();
                 TopNav.showCreateButtons();
